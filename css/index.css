@@ -1,11 +1,48 @@
 body {
 	background: #f7f7f7;
+	color: #777;
+	font-family: "Helvetica Neue";
+	font-weight: 300;
+	font-size: 1.5rem;
+	-webkit-font-smoothing: antialiased;
+	text-shadow: 1px 1px 1px white;
+}
+h1, h2 {
+	font-family: "Museo Slab";
 	color: #444;
+	text-shadow: -1px -1px 0 rgba(0,0,0,0.15), 1px 1px 1px white;
+}
+header {
+	max-width: 45rem;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
 }
 h1 {
-	font-family: "Museo Slab";
-	font-size: 64px;
-	font-weight: 100;
+	font-weight: 500;
+	font-size: 5rem;
+	color: #555;
+}
+h2 {
 	text-align: center;
-	text-shadow: -1px -1px 0 rgba(0,0,0,0.15), 1px 1px 1px white;
+	font-weight: 100;
+	font-size: 3rem;
+}
+body > section {
+	margin-top: 2rem;
+	border-top: dotted 1px #999;
+	padding-top: 0.5rem;
+	max-width: 45rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+figure {
+	margin: 0;
+}
+img {
+	max-width: 100%;
+	box-sizing: border-box;
+	padding: 20px;
+	background: #eee;
+	border: solid 1px #ccc;
 }
