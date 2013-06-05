@@ -5,8 +5,15 @@ body {
 	font-weight: 300;
 	margin: 0 1em;
 }
+h1, h2 {
+	font-family: "Museo Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 500;
+}
 h1 {
 	text-align: center;
+}
+h3, h4 {
+	font-weight: 500;
 }
 a {
 	color: #FA6900;
@@ -14,9 +21,8 @@ a {
 a:hover {
 	color: #F38630;
 }
-h1, h2 {
-	font-family: "Museo Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-weight: 500;
+strong {
+	white-space: nowrap;
 }
 li, p {
 	line-height: 1.25em;
@@ -80,6 +86,9 @@ body > header nav + p {
 	border-top: dotted 1px #ccc;
 	padding-top: 1em;
 }
+#more a {
+	margin-right: 1em;
+}
 
 @media (min-width: 600px) {
 	body {
@@ -91,9 +100,12 @@ body > header nav + p {
 	body {
 		margin: 0 5em;
 	}
+	body > header {
+		font-size: 125%;
+	}
 	body > header p {
-		padding-left: 15%;
-		padding-right: 15%;
+		padding-left: 20%;
+		padding-right: 20%;
 	}
 	#employment {
 		float: left;
@@ -119,6 +131,7 @@ body > header nav + p {
 		top: 0;
 		left: 1em;
 		width: 30%;
+		font-size: 100%;
 	}
 	body > header h1 {
 		text-align: left;
@@ -129,5 +142,25 @@ body > header nav + p {
 	body > header p {
 		padding-left: 0;
 		padding-right: 0;
+	}
+}
+
+@media print {
+	footer a {
+		display: block;
+	}
+	body > header nav {
+		display: none;
+	}
+	body > header a:after {
+		content: none;
+	}
+	a:after {
+		content: ' <' attr(href) '>';
+		color: #555;
+		text-decoration: none;
+	}
+	.print-hide {
+		display: none;
 	}
 }
