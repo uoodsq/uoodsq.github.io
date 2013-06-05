@@ -1,11 +1,133 @@
 body {
 	background: #f7f7f7;
-	color: #444;
+	color: #555;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 300;
+	margin: 0 1em;
 }
 h1 {
-	font-family: "Museo Slab";
-	font-size: 64px;
-	font-weight: 100;
 	text-align: center;
-	text-shadow: -1px -1px 0 rgba(0,0,0,0.15), 1px 1px 1px white;
+}
+a {
+	color: #FA6900;
+}
+a:hover {
+	color: #F38630;
+}
+h1, h2 {
+	font-family: "Museo Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 500;
+}
+li, p {
+	line-height: 1.25em;
+}
+ul {
+	padding-left: 0;
+}
+section li {
+	list-style: none;
+	margin-left: 1.25em;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+section li ul {
+	margin-top: 0.5em;
+}
+section li li {
+	margin-bottom: 0;
+}
+section li:before {
+	font-size: 0.75em;
+	position: absolute;
+	left: -1.5em;
+	content: '\27a4';
+	color: #ccc;
+}
+section li li:before {
+	font-size: 0.5em;
+}
+nav ul {
+	text-align: center;
+}
+nav li {
+	display: inline;
+	margin-left: 1em;
+}
+nav li:first-child {
+	margin-left: 0;
+}
+footer {
+	border-top: dotted 1px #ccc;
+	padding: 1em 0;
+}
+main > section {
+	border-top: dotted 1px #ccc;
+}
+.employer {
+	margin-top: 2em;
+}
+h2 + .employer {
+	margin-top: 1em;
+}
+.employer header h3, .employer header p {
+	margin: 0.15em 0;
+}
+.tenure {
+	font-size: 0.9em;
+	color: #999;
+}
+body > header nav + p {
+	border-top: dotted 1px #ccc;
+	padding-top: 1em;
+}
+
+@media (min-width: 600px) {
+	body {
+		font-size: 125%;
+	}
+}
+
+@media (min-width: 900px) {
+	body {
+		margin: 0 5em;
+	}
+	body > header p {
+		padding-left: 15%;
+		padding-right: 15%;
+	}
+	#employment {
+		float: left;
+		width: 55%;
+	}
+	#skills, #education {
+		float: right;
+		width: 40%;
+	}
+	footer {
+		clear: both;
+	}
+}
+
+@media (min-width: 1400px) {
+	body {
+		font-size: 130%;
+		margin: 0 1em;
+		padding-left: 32%;
+	}
+	body > header {
+		position: fixed;
+		top: 0;
+		left: 1em;
+		width: 30%;
+	}
+	body > header h1 {
+		text-align: left;
+	}
+	body > header nav ul {
+		text-align: left;
+	}
+	body > header p {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
