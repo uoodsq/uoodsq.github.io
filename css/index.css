@@ -86,6 +86,10 @@ body > header nav + p {
 	border-top: dotted 1px #ccc;
 	padding-top: 1em;
 }
+body > header h1 + p {
+	font-size: 1.25em;
+	text-align: center;
+}
 #more a {
 	margin-right: 1em;
 }
@@ -142,6 +146,12 @@ body > header nav + p {
 	body > header p {
 		padding-left: 0;
 		padding-right: 0;
+	}
+}
+
+@media screen {
+	.print-show {
+		display: none;
 	}
 }
 
