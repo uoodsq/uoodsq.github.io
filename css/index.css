@@ -87,8 +87,10 @@ body > header nav + p {
 	padding-top: 1em;
 }
 body > header h1 + p {
-	font-size: 1.25em;
+	font-size: 1.1em;
 	text-align: center;
+	margin-top: 0;
+	padding-top: 0;
 }
 #more a {
 	margin-right: 1em;
@@ -158,6 +160,9 @@ body > header h1 + p {
 @media print {
 	footer a {
 		display: block;
+	}
+	body > header h1 {
+		margin-bottom: 0;
 	}
 	body > header nav {
 		display: none;
