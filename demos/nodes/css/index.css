@@ -1,0 +1,69 @@
+body {
+	padding: 0;
+	overflow: hidden;
+}
+.container {
+	position: absolute;
+	left: 10px;
+}
+.controls [type=number] {
+	width: 180px;
+}
+.node {
+	stroke: #fff;
+	stroke-width: 1.5px;
+}
+.node:hover {
+	cursor: pointer;
+}
+.node.active, .node:active {
+	stroke: #333;
+}
+.sgsn { fill: steelBlue; }
+.ggsn { fill: orange; }
+.link {
+	stroke: #999;
+}
+.link:hover {
+	cursor: pointer;
+	stroke: #666;
+}
+.link.active, .link:active {
+	stroke: #333;
+}
+.graph {
+	position: absolute;
+	z-index: -1;
+}
+.controls {
+	background: transparent;
+}
+.status *:before {
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+	margin-right: 10px;
+	color: #666;
+}
+.node:before { content: 'Node Type'; }
+.ip:before { content: 'IP Address'; }
+.src:before { content: 'Source'; }
+.dst:before { content: 'Destination'; }
+.messages:before { content: 'Message Rate'; }
+.messages:after { content: ' messages/s'; }
+
+.ui-slider {
+	margin-top: 17px;
+}
+
+#controls {
+	position: fixed;
+	top: 20px; left: 20px;
+	width: 400px;
+}
+#controls legend + .control-group {
+	margin-top: 0;
+}
+#controls .control-group {
+	margin-bottom: 5px;
+}

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<title>GPRS Core Network</title>
+
+	<link href="components/jquery-ui/themes/smoothness/jquery-ui.css" rel="stylesheet">
+	<link href="components/bootstrap/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="components/select2/select2.css" rel="stylesheet">
+	<link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+	<div class="graph"></div>
+
+	<div id="controls">
+		<h1>GPRS Core Network</h1>
+
+		<form class="form-horizontal">
+			<fieldset>
+				<legend>Data Options</legend>
+
+				<div class="control-group">
+					<label class="control-label" for="message_type">Message Type</label>
+
+					<div class="controls">
+						<select id="message_type" style="width:100%">
+							<option value="total_c">All Messages</option>
+							<option value="create_req">Create Context Request</option>
+							<option value="create_resp">Create Context Response</option>
+							<option value="update_req">Update Context Request</option>
+							<option value="update_resp">Update Context Response</option>
+							<option value="delete_req">Delete Context Request</option>
+							<option value="delete_resp">Delete Context Response</option>
+							<option value="echo_req">Echo Request</option>
+							<option value="echo_resp">Echo Response</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" data-toggle="tooltip">
+						Link Threshold
+						<a href="#" data-toggle="tooltip" title="The threshold (in msgs/s) at which links are created.  Raise this value if there are too many lines on the graph."><i class="icon-question-sign"></i></a><br>
+						<small><output for="link_threshold">10</output> msgs/s</small>
+					</label>
+
+					<div class="controls">
+						<div id="link_threshold"></div>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label">
+						Node Threshold
+						<a href="#" data-toggle="tooltip" title="The threshold (in msgs/s) at which nodes are created.  Raise this value if there are too many dots on the graph."><i class="icon-question-sign"></i></a><br>
+						<small><output>70</output> msgs/s</small>
+					</label>
+
+					<div class="controls">
+						<div id="node_threshold"></div>
+					</div>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend>Visualization Options</legend>
+
+				<div class="control-group">
+					<label class="control-label">
+						Link Thickness
+						<a href="#" data-toggle="tooltip" title="The range of line thicknesses."><i class="icon-question-sign"></i></a><br>
+						<small><output class="lower">0.5</output>px - <output class="upper">8</output>px</small>
+					</label>
+
+					<div class="controls">
+						<div id="link_stroke"></div>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label">
+						Link Transparency
+						<a href="#" data-toggle="tooltip" title="The range of line opacity."><i class="icon-question-sign"></i></a><br>
+						<small><output class="lower">0.5</output> - <output class="upper">0.9</output></small>
+					</label>
+
+					<div class="controls">
+						<div id="link_opacity"></div>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label">
+						Link Tension
+						<a href="#" data-toggle="tooltip" title="The range of line strength."><i class="icon-question-sign"></i></a><br>
+						<small><output class="lower">0.1</output> - <output class="upper">1</output></small>
+					</label>
+
+					<div class="controls">
+						<div id="link_strength"></div>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label">
+						Link Distance
+						<a href="#" data-toggle="tooltip" title="The range of line distance."><i class="icon-question-sign"></i></a><br>
+						<small><output class="lower">10</output> - <output class="upper">30</output></small>
+					</label>
+
+					<div class="controls">
+						<div id="link_distance"></div>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label">
+						Node Charge
+						<a href="#" data-toggle="tooltip" title="How strong SGSNs repel each other."><i class="icon-question-sign"></i></a><br>
+						<small><output class="lower">10</output> - <output class="upper">400</output></small>
+					</label>
+
+					<div class="controls">
+						<div id="node_sgsn_charge"></div>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label">
+						Node Radius
+						<a href="#" data-toggle="tooltip" title="How large SGSNs are."><i class="icon-question-sign"></i></a><br>
+						<small><output class="lower">4</output> - <output class="upper">10</output></small>
+					</label>
+
+					<div class="controls">
+						<div id="node_sgsn_radius"></div>
+					</div>
+			</fieldset>
+		</form>
+
+		<div class="status"></div>
+	</div>
+
+	<script src="components/jquery/jquery.js"></script>
+	<script src="components/jquery-ui/ui/jquery-ui.custom.js"></script>
+	<script src="components/bootstrap/bootstrap/js/bootstrap.js"></script>
+	<script src="components/select2/select2.js"></script>
+	<script src="components/lodash/lodash.js"></script>
+	<script src="components/d3/d3.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>
