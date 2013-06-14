@@ -1,0 +1,33 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	width: 800px;
+	margin: 0 auto;
+	color: #666;
+}
+h1 {
+	font-weight: 300;
+	color: #333;
+}
+.data path {
+	fill: none;
+	stroke: steelBlue;
+	stroke-width: 2px;
+}
+.data rect {
+	fill: steelBlue;
+	shape-rendering: crispEdges;
+}
+.axis path, .axis line {
+	fill: none;
+	stroke: #999;
+	shape-rendering: crispEdges;
+}
+.axis text, .label {
+	font-family: menlo, monaco, courier, monospace;
+	font-size: 8pt;
+}
+.brush .extent {
+	fill-opacity: .125;
+	shape-rendering: crispEdges;
+}
