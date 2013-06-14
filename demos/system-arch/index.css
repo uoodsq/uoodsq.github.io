@@ -1,0 +1,30 @@
+body {
+	padding: 0;
+	font-family: "Helvetica Neue";
+	color: #333;
+}
+h1 {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+}
+.node circle {
+	stroke: white;
+	stroke-width: 2px;
+}
+.node circle:hover {
+	cursor: move;
+	stroke: lightGray;
+}
+.node text {
+	font-family: Menlo;
+	font-size: 10px;
+	text-anchor: middle;
+}
+.node.script circle { fill: lightBlue; }
+.node.process circle { fill: orange; }
+.node.database circle { fill: lightGray; }
+.link {
+	stroke: #333;
+	stroke-width: 1px;
+}

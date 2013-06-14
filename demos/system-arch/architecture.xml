@@ -1,0 +1,26 @@
+<architecture>
+	<nodes>
+		<node id="postgres" class="database">Postgres</node>
+		<node id="dns_archiver" class="python process">DNS Archiver</node>
+		<node id="voip_archiver" class="python process">VOIP Archiver</node>
+		<node id="http_archiver" class="python process">HTTP Archiver</node>
+		<node id="dns_alerter" class="python process">DNS Alerter</node>
+		<node id="pg_autovacuum" class="third-party process">PG Autovacuum</node>
+		<node id="spquery" class="cgi script">SPQuery</node>
+		<node id="httpd" class="third-party process">httpd (Apache)</node>
+		<node id="xmlrpc" class="cgi script">xmlrpc (PeakflowDPI-XMLRPC)</node>
+		<node id="spibc" class="cgi script">spibc (PeakflowDPI-SPIBC)</node>
+	</nodes>
+	<links>
+		<link from="dns_archiver" to="postgres" />
+		<link from="http_archiver" to="postgres" />
+		<link from="voip_archiver" to="postgres" />
+		<link from="dns_alerter" to="postgres" />
+		<link from="pg_autovacuum" to="postgres" />
+		<link from="postgres" to="spquery" />
+		<link from="httpd" to="spquery" />
+		<link from="httpd" to="xmlrpc" />
+		<link from="httpd" to="spibc" />
+	</links>
+</architecture>
+
