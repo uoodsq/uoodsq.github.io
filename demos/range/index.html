@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Acceptable Range UI Demo</title>
+
+<style>
+
+body {
+    font-size: 12px;
+    font-family: "Lucida Grande", Arial, sans-serif;
+}
+
+.graph {
+    font-size: 10px;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #333;
+    shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    display: none;
+}
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+.line.fade {
+    stroke: rgba(127,127,127,0.5);
+}
+
+.range {
+    fill: rgba(127,127,127,0.25);
+    stroke: none;
+}
+
+form, .notes {
+    background: #f7f7f7;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 5px 20px;
+    border: solid 1px #ccc;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Acceptable Range UI Demo</h1>
+
+<div id="baseline-graph" class="graph"></div>
+
+<form onsubmit="return false;" oninput="o.value = i.valueAsNumber;">
+    <label for="baseline-mult">Acceptable Range</label>
+    <br />
+    <input name="i" id="baseline-mult" type="range" min="0" max="10" value="1" step="0.01">
+    <output name="o" for="baseline-mult">1.0</output>
+</form>
+
+<div class="notes">
+    <h2>What is this?</h2>
+
+    <p>Grey lines represent messages/hour measurements over 24 hour periods from Dec 13 to Dec 17.</p>
+
+    <p>Blue line represents mean of those daily samples.</p>
+
+    <p>Grey zone represents N standard deviations from the mean (adjusted using the slider).</p>
+</div>
+
+<script src="d3.v2.min.js"></script>
+<script>
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40};
+var width = 960 - margin.left - margin.right;
+var height = 500 - margin.top - margin.bottom;
+
+var mult = document.getElementById('baseline-mult');
+
+var parseDate = d3.time.format('%Y-%m-%d %X').parse;
+
+var x = d3.time.scale()
+    .range([0, width]);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient('bottom');
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient('left');
+
+var lineGenerator = function(key) {
+    return d3.svg.line()
+        .interpolate('basis')
+        .x(function(d) { return x(d.date); })
+        .y(function(d) { return y(d[key]); });
+};
+
+var area = d3.svg.area()
+    .interpolate('basis')
+    .x(function(d) { return x(d.date); })
+    .y0(function(d) { return y(d.mean - (mult.value * d.std)); })
+    .y1(function(d) { return y(d.mean + (mult.value * d.std)); });
+
+var svg = d3.select('#baseline-graph').append('svg')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
+  .append('g')
+    .attr('transform', "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("data.csv", function(data) {
+    data.forEach(function(d) {
+        d.date = parseDate(d['']);
+
+        var points = [
+            d['2012-12-13'],
+            d['2012-12-14'],
+            d['2012-12-15'],
+            d['2012-12-16'],
+            d['2012-12-17']
+        ];
+
+        d.mean = d3.mean(points);
+
+        d.std = Math.sqrt(d3.mean(points.map(function(p) {
+            return Math.pow(p - d.mean, 2);
+        })));
+
+        delete d[''];
+    });
+
+    x.domain(d3.extent(data, function(d) { return d.date; }));
+    y.domain([0, 15000]);
+
+    svg.append('g')
+        .attr('class', 'x axis')
+        .attr('transform', 'translate(0,' + height + ')')
+        .call(xAxis);
+
+    svg.append('g')
+        .attr('class', 'y axis')
+        .call(yAxis);
+
+    svg.append('path')
+        .datum(data)
+        .attr('class', 'range')
+        .attr('d', area);
+
+    ['13', '14', '15', '16', '17'].forEach(function(day) {
+        svg.append('path')
+            .datum(data)
+            .attr('class', 'line fade')
+            .attr('d', lineGenerator('2012-12-' + day));
+    });
+
+    svg.append('path')
+        .datum(data)
+        .attr('class', 'line')
+        .attr('d', lineGenerator('mean'));
+
+    mult.onchange = function() {
+        svg.select('.range').attr('d', area);
+    };
+});
+
+</script>
+</body>
+</html>
