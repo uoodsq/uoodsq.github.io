@@ -109,10 +109,10 @@ body > header h1 + p {
     padding-right: 20%; }
   #employment {
     float: left;
-    width: 55%; }
+    width: 50%; }
   #skills, #education {
     float: right;
-    width: 40%; }
+    width: 45%; }
   footer {
     clear: both; } }
 
@@ -133,7 +133,14 @@ body > header h1 + p {
     text-align: left; }
   body > header p {
     padding-left: 0;
-    padding-right: 0; } }
+    padding-right: 0; }
+  body > footer {
+    position: fixed;
+    bottom: 0;
+    left: 1em;
+    width: 30%; }
+  body > footer h2 {
+    margin-top: 0; } }
 
 @media screen {
   .print-show {
