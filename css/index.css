@@ -147,6 +147,25 @@ body > header h1 + p {
     display: none; } }
 
 @media print {
+  body {
+    font-size: 10pt;
+  }
+  h2, h3 {
+    font-family: "source-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  h2 {
+    font-size: 12pt;
+  }
+  h3 {
+    font-size: 11pt;
+  }
+  h3, h4, p, li {
+    line-height: 1em;
+    margin-bottom: 0.5em;
+  }
+  p, li {
+    margin-top: 0;
+  }
   footer a {
     display: block; }
   body > header h1 {
