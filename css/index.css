@@ -34,10 +34,10 @@ section li {
   list-style: none;
   margin-left: 1.25em;
   position: relative;
-  margin-bottom: 0.5em; }
+  margin-bottom: 0.25em; }
 
 section li ul {
-  margin-top: 0.5em; }
+  margin-top: 0.25em; }
 
 section li li {
   margin-bottom: 0; }
@@ -70,10 +70,10 @@ main > section {
   border-top: dotted 1px #ccc; }
 
 .employer {
-  margin-top: 2em; }
+  margin-top: 1em; }
 
 h2 + .employer {
-  margin-top: 1em; }
+  margin-top: 0.5em; }
 
 .employer header h3, .employer header p {
   margin: 0.15em 0; }
@@ -161,7 +161,7 @@ body > header h1 + p {
   }
   h3, h4, p, li {
     line-height: 1em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
   }
   p, li {
     margin-top: 0;
