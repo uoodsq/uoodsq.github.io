@@ -24,7 +24,7 @@
 			</ul>
 		</nav>
 
-		<p>Bryan Witherspoon is a <strong>software engineer</strong> with over fifteen years of professional experience
+		<p>Bryan Witherspoon is a <strong>full-stack software engineer</strong> with over fifteen years of professional experience
 			designing, building and delivering web applications.</p>
 	</header>
 
@@ -35,19 +35,20 @@
 			<section class="employer">
 				<header>
 					<h3><a href="https://gh.io/uoodsq">GitHub</a></h3>
-					<p>Staff Software Engineer - Cloud and Enterprise Security</p>
-					<p class="tenure"><time datetime="2022-01">January, 2022</time> - present</p>
+					<p>Staff Software Engineer</p>
+					<p class="tenure"><time datetime="2022-01">January, 2022</time> - <time datetime="2025-05">May, 2025</time></p>
 				</header>
 
 				<main>
 					<h4>Summary</h4>
 
-					<p>At GitHub, I am part of the Enterprise Security team, responsible for developing and maintaining
-						security automations that protect the company.</p>
+					<p>At GitHub, I initially joined the Enterprise Security team, responsible for developing and maintaining security automations that protect the company. I later transitioned to the Copilot Core Experiences team, focusing on core user experiences and quality improvements for GitHub Copilot.</p>
 
 					<h4>Accomplishments</h4>
 
 					<ul>
+						<li>Led the development of key features for GitHub Copilot's core user experience.</li>
+						<li>Pioneered a novel approach to measure Copilot's response quality using LLM evaluation against real customer conversations.</li>
 						<li>Designed and developed a platform for conducting internal security communication campaigns.</li>
 						<li>Developed a proof-of-concept for the Cloud Security team for automatically tagging resources in AWS with
 							the user or role that created it.</li>
@@ -224,31 +225,75 @@
 		<section id="skills">
 			<h2>Proficiencies</h2>
 
-			<h3>Software engineering practices</h3>
-
+			<h3>Languages & Frameworks</h3>
 			<ul>
-				<li>Web application development
+				<li>Programming Languages
 					<ul>
-						<li>Built production services in Python and Ruby on Rails</li>
-						<li>Built services on top of data stores like PostgreSQL, MySQL, Redis, Elasticsearch and Kafka.</li>
-						<li>Deployed services on AWS</li>
+						<li>Go, Python, JavaScript/TypeScript, Ruby</li>
 					</ul>
 				</li>
-
-				<li>Development lifecycle
+				<li>Web Development
 					<ul>
-						<li>Agile development</li>
+						<li>Ruby on Rails, React, Node.js</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h3>Infrastructure & Cloud</h3>
+			<ul>
+				<li>Cloud Platforms
+					<ul>
+						<li>AWS, Azure</li>
+					</ul>
+				</li>
+				<li>Infrastructure as Code
+					<ul>
+						<li>Terraform, Ansible, Docker</li>
+					</ul>
+				</li>
+				<li>Data Stores
+					<ul>
+						<li>PostgreSQL, MySQL, Redis, Elasticsearch, Kafka</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h3>Development Practices</h3>
+			<ul>
+				<li>Software Development
+					<ul>
+						<li>Agile development methodologies</li>
 						<li>Version control (Git)</li>
-						<li>Code review</li>
-						<li>Continuous integration and automated testing</li>
-						<li>Production automation (Ansible)</li>
-						<li>Monitoring and alerting</li>
+						<li>Code review and pair programming</li>
+						<li>Test-driven development</li>
 					</ul>
 				</li>
-
-				<li>User interface
+				<li>DevOps & Automation
 					<ul>
-						<li>In previous roles, have done UI design and development</li>
+						<li>Continuous integration/deployment (CI/CD)</li>
+						<li>Automated testing (Pytest, Jest)</li>
+						<li>Infrastructure automation</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h3>Monitoring & Observability</h3>
+			<ul>
+				<li>Tools & Platforms
+					<ul>
+						<li>Splunk, DataDog, Sentry</li>
+						<li>Logging and metrics collection</li>
+						<li>Performance monitoring and optimization</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h3>AI & Machine Learning</h3>
+			<ul>
+				<li>Technologies & Practices
+					<ul>
+						<li>Large Language Models (LLMs)</li>
+						<li>AI evaluation and quality metrics</li>
 					</ul>
 				</li>
 			</ul>
@@ -272,28 +317,10 @@
 		<p>
 			<a href="mailto:b@spoon.id">Email</a>
 			<a href="https://gh.io/uoodsq">Github</a>
-			<a href="https://a2mi.social/@uoodsq">Mastodon</a>
 			<a href="https://www.linkedin.com/pub/bryan-witherspoon/14/470/a19/">LinkedIn</a>
 			<a class="print-hide" href="bryan_witherspoon_resume.pdf">PDF</a>
 		</p>
 	</footer>
-
-	<script>
-		(function (i, s, o, g, r, a, m) {
-			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-				(i[r].q = i[r].q || []).push(arguments)
-			}, i[r].l = 1 * new Date(); a = s.createElement(o),
-				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-		ga('create', 'UA-41467334-1', 'uoodsq.github.io');
-		ga('send', 'pageview');
-
-		document.querySelector('[href$=resume\\.pdf]')
-			.addEventListener('click', function () {
-				ga('send', 'event', 'link', 'click', 'download resume');
-			});
-	</script>
 </body>
 
 </html>
