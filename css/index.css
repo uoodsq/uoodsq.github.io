@@ -259,6 +259,18 @@ body > header h1 + p {
     }
   }
   #skills {
-    columns: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 0 1em;
+  }
+
+  #skills h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+
+  #skills > div {
+    align-self: start;
   }
 }
