@@ -126,74 +126,74 @@ body > header h1 + p {
   margin-right: 1em;
 }
 
-@media (min-width: 600px) {
-  body {
-    font-size: 125%;
-  }
-}
-
-@media (min-width: 900px) {
-  body {
-    margin: 0 5em;
-  }
-  body > header {
-    font-size: 125%;
-  }
-  body > header p {
-    padding-left: 20%;
-    padding-right: 20%;
-  }
-  #employment {
-    float: left;
-    width: 50%;
-  }
-  #skills,
-  #education {
-    float: right;
-    width: 45%;
-  }
-  footer {
-    clear: both;
-  }
-}
-
-@media (min-width: 1400px) {
-  body {
-    font-size: 130%;
-    margin: 0 1em;
-    padding-left: 32%;
-  }
-  body > header {
-    position: fixed;
-    top: 0;
-    left: 1em;
-    width: 30%;
-    font-size: 100%;
-  }
-  body > header h1 {
-    text-align: left;
-  }
-  body > header nav ul {
-    text-align: left;
-  }
-  body > header p {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  body > footer {
-    position: fixed;
-    bottom: 0;
-    left: 1em;
-    width: 30%;
-  }
-  body > footer h2 {
-    margin-top: 0;
-  }
-}
-
 @media screen {
   .print-show {
     display: none;
+  }
+
+  @media (min-width: 600px) {
+    body {
+      font-size: 125%;
+    }
+  }
+
+  @media (min-width: 900px) {
+    body {
+      margin: 0 5em;
+    }
+    body > header {
+      font-size: 125%;
+    }
+    body > header p {
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+    #employment {
+      float: left;
+      width: 50%;
+    }
+    #skills,
+    #education {
+      float: right;
+      width: 45%;
+    }
+    footer {
+      clear: both;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    body {
+      font-size: 130%;
+      margin: 0 1em;
+      padding-left: 32%;
+    }
+    body > header {
+      position: fixed;
+      top: 0;
+      left: 1em;
+      width: 30%;
+      font-size: 100%;
+    }
+    body > header h1 {
+      text-align: left;
+    }
+    body > header nav ul {
+      text-align: left;
+    }
+    body > header p {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    body > footer {
+      position: fixed;
+      bottom: 0;
+      left: 1em;
+      width: 30%;
+    }
+    body > footer h2 {
+      margin-top: 0;
+    }
   }
 }
 
@@ -260,8 +260,5 @@ body > header h1 + p {
   }
   #skills {
     columns: 2;
-  }
-  section li:before {
-    color: #999;
   }
 }
